@@ -2,9 +2,11 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="w18comp1008s3mar28.GUIExampleViewController">
@@ -12,15 +14,25 @@
         <URL value="@guiexampleview.css" />
     </stylesheets>
    <children>
-      <VBox layoutX="26.0" layoutY="24.0" spacing="5.0">
+      <HBox layoutX="26.0" layoutY="24.0" spacing="30.0">
          <children>
-            <Label text="What I will do this weekend:" />
-            <CheckBox fx:id="homeworkCheckBox" mnemonicParsing="false" onAction="#updateWeekendTextArea" text="Homework" />
-            <CheckBox fx:id="sleepCheckBox" mnemonicParsing="false" onAction="#updateWeekendTextArea" text="Sleep..so much" />
-            <CheckBox fx:id="videoGameCheckBox" mnemonicParsing="false" onAction="#updateWeekendTextArea" text="Play more games that I probably should" />
-            <CheckBox fx:id="netflixCheckBox" mnemonicParsing="false" onAction="#updateWeekendTextArea" text="Netflix" />
-            <TextArea fx:id="weekendTextArea" prefHeight="229.0" prefWidth="338.0" />
+            <VBox spacing="5.0">
+               <children>
+                  <Label text="What I will do this weekend:" />
+                  <CheckBox fx:id="homeworkCheckBox" mnemonicParsing="false" onAction="#updateWeekendTextArea" text="Homework" />
+                  <CheckBox fx:id="sleepCheckBox" mnemonicParsing="false" onAction="#updateWeekendTextArea" text="Sleep..so much" />
+                  <CheckBox fx:id="videoGameCheckBox" mnemonicParsing="false" onAction="#updateWeekendTextArea" text="Play more games that I probably should" />
+                  <CheckBox fx:id="netflixCheckBox" mnemonicParsing="false" onAction="#updateWeekendTextArea" text="Netflix" />
+                  <TextArea fx:id="weekendTextArea" prefHeight="229.0" prefWidth="338.0" />
+               </children>
+            </VBox>
+            <VBox spacing="5.0">
+               <children>
+                  <ComboBox fx:id="gameComboBox" onAction="#updateGamesLabel" prefHeight="31.0" prefWidth="215.0" promptText="Choose the best game" />
+                  <Label fx:id="gameLabel" prefHeight="60.0" prefWidth="212.0" text="Label" />
+               </children>
+            </VBox>
          </children>
-      </VBox>
+      </HBox>
    </children>
 </AnchorPane>
